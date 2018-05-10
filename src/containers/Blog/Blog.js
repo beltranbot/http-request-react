@@ -15,7 +15,7 @@ class Blog extends Component {
     }
 
     async componentDidMount () {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+        const response = await axios.get('https://jsonplaceholder.typicode.com/postssss')
             .catch(error => this.setState({error:  true}))
         if (!response) return
         const posts = response.data.slice(0, 4)
