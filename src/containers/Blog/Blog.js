@@ -15,6 +15,8 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
+                <Route path="/" exact component={Posts} />
+                {/*
                 <Route
                     path="/"
                     exact
@@ -23,6 +25,7 @@ class Blog extends Component {
                     path="/new-post"
                     exact
                     render={() => (<h1>new posts</h1>)} />
+                */}
             </div>
         )
     }
