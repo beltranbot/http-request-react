@@ -9,16 +9,24 @@ class FullPost extends Component {
     }
 
     async componentDidMount () {
+        this.loadData()
+    }
+
+    async componentDidUpdate () {
+        this.loadData()
+    }
+
+    async loadData () {
         const post_id = this.props.match.params.id
         if (!post_id) return
         if (this.state.loadedPost
             && (!this.state.loadedPost
-                || this.state.loadedPost.id === post_id)) return
-        
+                || this.state.loadedPost.id === +post_id)) return
+
         const response = await axios.get(
             'https://jsonplaceholder.typicode.com/posts/' + post_id
         )
-        this.setState({loadedPost: response.data})
+        this.setState({ loadedPost: response.data })
     }
 
     deletePostHandler = async () => {
